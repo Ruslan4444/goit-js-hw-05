@@ -1,13 +1,21 @@
-const Hotel = function (name, stars, capacity) {
-  this.name = name;
-  this.stars = stars;
-  this.capacity = capacity;
-};
+class Guest {
+  // Аналог функции-конструктора
+  constructor(name, roomNumber) {
+    this.name = name;
+    this.roomNumber = roomNumber;
+  }
 
-const hotel = new Hotel('Resort Hotel', 5, 100);
-console.log(hotel);
-// Hotel {name: "Resort Hotel", stars: 5, capacity: 100}
+  // Аналог Guest.prototype.getFullInfo
+  getFullInfo() {
+    console.log(`
+      Guest ${this.name}
+      Room number ${this.roomNumber}
+    `);
+  }
+}
 
-const motel = new Hotel('Sunlight Motel', 4, 300);
-console.log(motel);
-// Hotel {name: "Sunlight Motel", stars: 4, capacity: 300}
+const mango = new Guest('Mango', 26);
+
+mango.getFullInfo();
+// Guest Mango
+// Room number 26

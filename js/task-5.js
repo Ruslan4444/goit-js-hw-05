@@ -7,7 +7,7 @@ class Car {
    * в консоль значения свойств maxSpeed, speed, isOn, distance и price.
    */
     static getSpecs(car) {
-        console.log(`maxSpeed: ${car.maxSpeed}, speed: ${car.speed}, isOn: ${car.isOn}, distance: ${car.distance}, price: ${car._price}`);
+        console.log(`maxSpeed: ${car.maxSpeed}, speed: ${car.speed}, isOn: ${car.isOn}, distance: ${car.distance}, price: ${car.price}`);
     }
 
   /*
@@ -86,10 +86,9 @@ class Car {
    * но только в том случае если машина заведена!
    */
     drive(hours) {
-        if (!this.isOn) {
-            return;
+        if (this.isOn) {
+            this.distance += hours * this.speed;
         }
-        this.distance += hours * this.speed;
   }
 }
 
